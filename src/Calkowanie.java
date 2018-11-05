@@ -13,32 +13,31 @@ public class Calkowanie {
         this.rownanie = rownanie;
     }
 
-    public void euler(Argument[] arguments){
-        Function f1  = new Function(rownanie);
+    public void euler(Argument[] arguments) {           // aby można było zmieniać wartości argumentów bez redefiniowania obiektu
+        Function f1 = new Function(rownanie);
         int param = f1.getParametersNumber();
 
-        PrimitiveElement[] args = new  PrimitiveElement[param+1];
+        PrimitiveElement[] args = new PrimitiveElement[param + 1];
         args[0] = f1;
-        for(int i = 0; i<param; i++){
-             args[i+1] = arguments[i];
+        for (int i = 0; i < param; i++) {
+            args[i + 1] = arguments[i];
         }
         String expression = f1.getFunctionExpressionString();
 
 
-
         double dt = krokCalkowania;
         double n = tk / dt;
-        double x[] = new double[(int) n+1];
-        double t[] = new double[(int) n+1];
+        double x[] = new double[(int) n + 1];
+        double t[] = new double[(int) n + 1];
 
-        x[0] = arguments[param-1].getArgumentValue();
+        x[0] = arguments[param - 1].getArgumentValue();
         t[0] = t0;
 
         for (int i = 0; i < n; i++) {
-            t[i+1] = t[i]+dt;
+            t[i + 1] = t[i] + dt;
             String arg = String.valueOf(x[i]);
             args[param] = new Argument("x = " + arg);
-            Expression e1 = new Expression(expression,args);
+            Expression e1 = new Expression(expression, args);
             double wynik = e1.calculate();
 
             x[i + 1] = x[i] + wynik * dt;
@@ -47,7 +46,7 @@ public class Calkowanie {
 
     }
 
-    public void eulerMod(){
+    public void eulerMod() {
 
     }
 
