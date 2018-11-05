@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="doc">
+    <CLASSES />
+    <JAVADOC>
+      <root url="file://$USER_HOME$/Downloads/MathParser.org-mXparser-v.4.2.0/doc" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="file://$USER_HOME$/Downloads/MathParser.org-mXparser-v.4.2.0/hello-world/1-java-eclipse-mars-1/src" />
+      <root url="file://$USER_HOME$/Downloads/MathParser.org-mXparser-v.4.2.0/java/src" />
+      <root url="file://$USER_HOME$/Downloads/MathParser.org-mXparser-v.4.2.0/java/test" />
+    </SOURCES>
+  </library>
+</component>
