@@ -19,16 +19,20 @@ public class test {
         t[0] = t0;
 
 
-        for (int i = 0; i < n; i++) {
-            t[i+1] = t[i]+dt;
-            String arg = String.valueOf(x[i]);
-            Argument xx = new Argument("x = " + arg);
-            Expression e1 = new Expression("f(x)",f1, xx);
-            double wynik = e1.calculate();
 
-            x[i + 1] = x[i] + wynik * dt;
-        }
 
+
+//
+//        for (int i = 0; i < n; i++) {
+//            t[i+1] = t[i]+dt;
+//            String arg = String.valueOf(x[i]);
+//            Argument xx = new Argument("x = " + arg);
+//            Expression e1 = new Expression("f(x)",f1, xx);
+//            double wynik = e1.calculate();
+//
+//            x[i + 1] = x[i] + wynik * dt;
+//        }
+//
 
 
     }
