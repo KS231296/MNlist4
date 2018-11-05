@@ -13,14 +13,17 @@ public class Calkowanie {
         this.rownanie = rownanie;
     }
 
-    public void euler(){
+    public void euler(Argument[] arguments){
         Function f1  = new Function(rownanie);
         int param = f1.getParametersNumber();
-        Argument[] arguments = new Argument[param];
+
+        PrimitiveElement[] args = new  PrimitiveElement[param+1];
+        args[0] = f1;
         for(int i = 0; i<param; i++){
-            arguments[i] = f1.getArgument(i);
+             args[i+1] = arguments[i];
         }
         String expression = f1.getFunctionExpressionString();
+
 
 
         double dt = krokCalkowania;
@@ -28,14 +31,14 @@ public class Calkowanie {
         double x[] = new double[(int) n+1];
         double t[] = new double[(int) n+1];
 
-        x[0] = 1;
+        x[0] = arguments[param-1].getArgumentValue();
         t[0] = t0;
 
         for (int i = 0; i < n; i++) {
             t[i+1] = t[i]+dt;
             String arg = String.valueOf(x[i]);
-            Argument xx = new Argument("x = " + arg);
-            Expression e1 = new Expression("f(x)",f1, xx);
+            args[param] = new Argument("x = " + arg);
+            Expression e1 = new Expression(expression,args);
             double wynik = e1.calculate();
 
             x[i + 1] = x[i] + wynik * dt;
