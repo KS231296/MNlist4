@@ -15,7 +15,12 @@ public class Calkowanie {
 
     public void euler(){
         Function f1  = new Function(rownanie);
-        String expression;
+        int param = f1.getParametersNumber();
+        Argument[] arguments = new Argument[param];
+        for(int i = 0; i<param; i++){
+            arguments[i] = f1.getArgument(i);
+        }
+        String expression = f1.getFunctionExpressionString();
 
 
         double dt = krokCalkowania;
